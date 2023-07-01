@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    /* #leftPanel {
+      float: left;
+      width: 200px;
+      background-color: #4c4c4c;
+      height: 100%;
+      padding: 10px;
+    } */
+    .wrapper{
+  display: flex;
+  position: relative;
+}
+.wrapper .sidebar{
+  width: 220px;
+  height: 100%;
+  background: #4b4276;
+  padding: 30px 0px;
+  position: fixed;
+}
+.wrapper .sidebar h2{
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+    #content {
+      margin-left: 220px;
+      padding: 10px;
+      height: 100%;
+      background-color: #bfb8c5;
+    }
+    .component {
+      cursor: pointer;
+      margin-bottom: 10px;
+      background-color: #d0c8d4;
+      color: #030303;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    .component:hover {
+      background-color: #3d1c4d;
+    }
+    h1 {
+      color: #0a0909;
+    }
+    p {
+      color: #060505;
+    }
+    
+  </style>
+</head>
+<body>
+  <script src="https://kit.fontawesome.com/ac8f663cf9.js" crossorigin="anonymous"></script>
+  <div class="wrapper">
+    <div class="sidebar">
+      <h2>SideBar</h2>
+    <div class="component" onclick="showContent('home')"><i class="fa-solid fa-house"></i>Home</div>
+    <div class="component" onclick="showContent('contact')"><i class="fa-solid fa-address-book"></i>Contact</div>
+    <div class="component" onclick="showContent('information')"><i class="fa-solid fa-circle-info"></i>Information</div>
+    <div class="component" onclick="showContent('guide')"><i class="fa-duotone fa-question"></i>Guide</div>
+  </div>
+  </div>
+  <div id="content">
+    <h1>Welcome!!!!!!!!!!!!!!!</h1>
+    <p>This is the initial content.</p>
+  </div>
+
+  <script>
+    function showContent(component) {
+      var contentDiv = document.getElementById("content");
+      var content = "";
+
+      if (component === "home") {
+        content = "<h1>Home</h1><p>Hello there this is the home page.</p>";
+      } else if (component === "contact") {
+        content = "<h1>Contact</h1><p>Hello there this is the contact  page.</p>";
+      } else if (component === "information") {
+        content = "<h1>Information</h1><p>Hello,This is the information page.</p>";
+      } else if (component === "guide") {
+        content = "<h1>Guide</h1><p>Hello,This is the guide page.</p>";
+      }
+
+      contentDiv.innerHTML = content;
+    }
+  </script>
+</body>
+</html> 
